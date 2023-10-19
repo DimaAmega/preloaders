@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evidently AI | loader</title>
+
+    <style>
+      body {
+        background: rgb(80, 80, 80);
+      }
+
+      #container {
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #evidently-loader {
+        --size: 100px;
+        width: var(--size);
+        height: var(--size);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #evidently-loader .histograms {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 55%;
+      }
+
+      #evidently-loader .histograms > * {
+        width: 15%;
+        background: #ed0400;
+        animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-duration: 1s;
+      }
+
+      #evidently-loader .histograms .hist-1 {
+        height: 50%;
+        animation-name: hist-1;
+      }
+
+      #evidently-loader .histograms .hist-2 {
+        height: 75%;
+        animation-name: hist-2;
+      }
+
+      #evidently-loader .histograms .hist-3 {
+        height: 100%;
+        animation-name: hist-3;
+      }
+
+      @keyframes hist-1 {
+        50% {
+          height: 100%;
+        }
+      }
+
+      @keyframes hist-2 {
+        50% {
+          height: 85%;
+        }
+        70% {
+          height: 50%;
+        }
+      }
+
+      @keyframes hist-3 {
+        50% {
+          height: 90%;
+        }
+        100% {
+          height: 40%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="evidently-loader">
+        <div class="histograms">
+          <div class="hist-1"></div>
+          <div class="hist-2"></div>
+          <div class="hist-3"></div>
+        </div>
+      </div>
+      <h2>Evidently <span style="color: #ed0400">AI</span></h2>
+    </div>
+  </body>
+</html>
